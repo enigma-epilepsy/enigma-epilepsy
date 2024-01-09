@@ -3,82 +3,17 @@ layout: default
 title: ENIGMA-Epilepsy
 ---
 
-# Welcome to My GitHub Page!
-This is a GitHub Page powered by Jekyll.
+# ENIGMA-Epilepsy
 
-<!-- DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-color: #363636; /* Dark gray background */
-      color: #ffffff; /* White text */
-      margin: 0;
-      padding: 0;
-    }
+## Welcome to ENIGMA-Epilepsy GitHub
 
-    header {
-      background-color: #4d4d4d; /* Dark gray header background */
-      padding: 20px;
-      text-align: center;
-    }
+Please follow [link] for more information.
 
-    h1 {
-      color: #a86cff; /* Purple header text color */
-    }
+## Research Areas
 
-    main {
-      max-width: 800px;
-      margin: 20px auto;
-      padding: 20px;
-    }
+- Cognitive Neuroscience
+- Neuroimaging
+- Genetics
+- Artificial Intelligence
 
-    footer {
-      background-color: #4d4d4d; /* Dark gray footer background */
-      padding: 10px;
-      text-align: center;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>ENIGMA-Epilepsy</h1>
-  </header>
-
-  <main>
-    <h2>Welcome ENIGMA-Epilepsy github</h2>
-    <p>
-      Please follow .
-    </p>
-
-    <h2>Research Areas</h2>
-    <ul>
-      <li>Cognitive Neuroscience</li>
-      <li>Neuroimaging</li>
-      <li>Genetics</li>
-      <li>Artificial Intelligence</li>
-    </ul>
-  </main>
-
-  <footer>
-    &copy; 2024 ENIGMA-Epilepsy. All rights reserved.
-  </footer>
-
-</body>
--->
-<div style="background-color: #4d4d4d; color: #a86cff; padding: 10px;">
-  <p>This is a custom HTML element with purple text on a dark gray background.</p>
-</div>
-
-
-<!
-</html>
-
+&copy; 2024 ENIGMA-Epilepsy. All rights reserved.

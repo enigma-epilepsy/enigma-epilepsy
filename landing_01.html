@@ -1,0 +1,133 @@
+#!/bin/bash
+#SBATCH --job-name="ecp"
+#SBATCH --output="out/ecp.o%A_%a.out"
+#SBATCH --error="out/ecp.e%A_%a.err"
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --partition=compute
+#SBATCH --cpus-per-task=8
+#SBATCH --mem-per-cpu=4G
+#SBATCH --mail-user=taha.gholipour@gmail.com
+#SBATCH --mail-type=ALL
+#SBATCH --time=48:00:00
+
+module load singularity
+echo "I am Slurm job ${SLURM_JOB_ID}, array job ${SLURM_ARRAY_JOB_ID}, and array task ${SLURM_ARRAY_TASK_ID}."
+
+/expanse/lustre/scratch/tgholipour/temp_project/scripts/01_fmriprep_expanse.sh sub-EC2073 4
+
+
+
+micapipe -sub <subject_id> -out <outputDirectory> -bids <BIDS-directory> -ses <session-name> -<module-flag>
+
+
+
+
+
+
+srun --partition=debug  --pty --account=csd838 --nodes=1 --ntasks-per-node=4 --mem=8G -t 00:30:00 --wait=0 --export=ALL /bin/bash
+
+
+
+
+#!/bin/bash
+#SBATCH --job-name=ecp_array_job
+#SBATCH --output=ecp_array.%A.%a.out
+#SBATCH --error=ecp_array.%A.%a.err
+#SBATCH --array=1-
+
+
+# Iterate through the array index
+for folder_index in $(seq $SLURM_ARRAY_TASK_MIN $SLURM_ARRAY_TASK_MAX); do
+
+# Read the file line by line
+for line in $(cat "$file_path"); do
+    # Extract "sub" and "ses" columns
+    sub=$(echo $line | awk '{print $1}')
+    ses=$(echo $line | awk '{print $2}')
+
+    # Print the information
+    echo "Processing sub: $sub, ses: $ses"
+
+    # Your command here (replace this with the actual command you want to run)
+    # Example command: sbatch your_script.sh $sub $ses
+done
+
+
+
+done
+
+## https://fmriprep.org/en/1.5.1/singularity.html
+
+
+#!/bin/bash
+#
+#SBATCH -J fmriprep
+#SBATCH --time=24:00:00
+##SBATCH -n 1
+#SBATCH --cpus-per-task=16
+#SBATCH --mem-per-cpu=4G
+#SBATCH -p shared
+# Outputs ----------------------------------
+#SBATCH -o out/%x-%A-%a.out
+#SBATCH -e out/%x-%A-%a.err
+#SBATCH --mail-user=tgholipour@health.ucsd.edu
+#SBATCH --mail-type=ALL
+# ------------------------------------------
+
+# BIDS_DIR="$STUDY/data"
+# DERIVS_DIR="derivatives/fmriprep-1.5.0"
+
+# # Prepare some writeable bind-mount points.
+# TEMPLATEFLOW_HOST_HOME=$HOME/.cache/templateflow
+# FMRIPREP_HOST_CACHE=$HOME/.cache/fmriprep
+# mkdir -p ${TEMPLATEFLOW_HOST_HOME}
+# mkdir -p ${FMRIPREP_HOST_CACHE}
+
+# # Prepare derivatives folder
+# mkdir -p ${BIDS_DIR}/${DERIVS_DIR}
+
+# # This trick will help you reuse freesurfer results across pipelines and fMRIPrep versions
+# mkdir -p ${BIDS_DIR}/derivatives/freesurfer-6.0.1
+# if [ ! -d ${BIDS_DIR}/${DERIVS_DIR}/freesurfer ]; then
+#     ln -s ${BIDS_DIR}/derivatives/freesurfer-6.0.1 ${BIDS_DIR}/${DERIVS_DIR}/freesurfer
+# fi
+
+# # Make sure FS_LICENSE is defined in the container.
+# export SINGULARITYENV_FS_LICENSE=$HOME/.freesurfer.txt
+
+# # Designate a templateflow bind-mount point
+# export SINGULARITYENV_TEMPLATEFLOW_HOME="/templateflow"
+# SINGULARITY_CMD="
+# singularity run --cleanenv \  
+#     -B $BIDS_DIR:/data -B ${TEMPLATEFLOW_HOST_HOME}:${SINGULARITYENV_TEMPLATEFLOW_HOME} \
+#         -B $L_SCRATCH:/work \
+#             $STUDY/images/poldracklab_fmriprep_1.5.0.simg"
+
+# Parse the participants.tsv file and extract one subject ID from the line corresponding to this SLURM task.
+subject=$( sed -n -E "$((${SLURM_ARRAY_TASK_ID} + 1))s/sub-(\S*)\>.*/\1/gp" ${BIDS_DIR}/participants.tsv )
+
+# Remove IsRunning files from FreeSurfer
+#find ${BIDS_DIR}/derivatives/freesurfer-6.0.1/sub-$subject/ -name "*IsRunning*" -type f -delete
+
+# Compose the command line
+cmd="${SINGULARITY_CMD} 
+/data 
+/data/${DERIVS_DIR} 
+participant --participant-label $subject 
+-w /work/ 
+-vv --omp-nthreads 8 --nthreads 12 --mem_mb 30000 --output-spaces MNI152NLin2009cAsym:res-2 anat fsnative fsaverage5 --use-aroma"
+
+# Setup done, run the command
+echo Running task ${SLURM_ARRAY_TASK_ID}
+echo Commandline: $cmd
+eval $cmd
+exitcode=$?
+
+# Output results to a table
+echo "sub-$subject   ${SLURM_ARRAY_TASK_ID}    $exitcode" \
+      >> ${SLURM_JOB_NAME}.${SLURM_ARRAY_JOB_ID}.tsv
+echo Finished tasks ${SLURM_ARRAY_TASK_ID} with exit code $exitcode
+exit $exitcode
+
+

@@ -3,7 +3,10 @@ layout: default
 title: ENIGMA-Epilepsy
 ---
 
-<!DOCTYPE html>
+# Welcome to My GitHub Page!
+This is a GitHub Page powered by Jekyll.
+
+<!-- DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -70,5 +73,12 @@ title: ENIGMA-Epilepsy
   </footer>
 
 </body>
+-->
+<div style="background-color: #4d4d4d; color: #a86cff; padding: 10px;">
+  <p>This is a custom HTML element with purple text on a dark gray background.</p>
+</div>
+
+
+<!
 </html>
 

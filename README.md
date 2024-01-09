@@ -7,7 +7,7 @@ title: ENIGMA-Epilepsy
 
 ## Welcome to ENIGMA-Epilepsy GitHub
 
-Please follow [link] for more information.
+Please follow https://enigma.ini.usc.edu/ongoing/enigma-epilepsy/ for more information.
 
 ## Research Areas
 

@@ -52,6 +52,8 @@ jobs:
 ---
 layout: default
 title: ENIGMA-Epilepsy
+theme: jekyll-theme-minimal
+description: Bookmark this to keep an eye on ENIGMA-Epilepsy updates!
 ---
 
 <!DOCTYPE html>

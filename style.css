@@ -24,6 +24,7 @@ header {
 h1 {
   padding: 2em; /* Remove default padding */
   margin: 0; /* Remove default margin for heading */
+  margin-bottom: 1em; /* Add space below the header */
 }
 
 nav {

@@ -2,15 +2,14 @@ body {
   font-family: Arial, sans-serif; /* Set a default font */
   margin: 0; /* Remove default margin */
   padding: 2em; /* Add margin from left and right */
-  text-align: center; /* Center the body content */
 }
 
 header {
   background-color: #f0f0f0; /* Light gray background for header */
-  padding: 1em; /* Add padding for spacing */
+  padding: 2em; /* Add padding for spacing */
   display: flex; /* Arrange elements horizontally */
   justify-content: space-between; /* Align items horizontally */
-  align-items: left; /* Align items vertically */
+  align-items: center; /* Align items vertically */
 }
 
 h1 {

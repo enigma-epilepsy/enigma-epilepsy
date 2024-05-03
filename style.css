@@ -3,7 +3,7 @@ body {
   margin: 0; /* Remove default margin */
   padding: 2em; /* Add margin from left and right */
   background-color: #f0f0f0; /* Light purple background for body */
-  margin-top: 2em; /* Add space above the body content */
+  margin-top: 4em; /* Add space above the body content */
 }
 
 header {
@@ -14,11 +14,11 @@ header {
   align-items: center; /* Align items vertically */
   position: fixed; /* Freeze header in position */
   top: 0; /* Position header at the top of the page */
-  left: 0; /* Position header at the left of the page */
-  width: 60%; /* Set header width to 80% of viewport (optional) */
+  left: 50%; /* Position header at the center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  width: 60%; /* Set header width to 60% of viewport */
   z-index: 10; /* Set stacking order to ensure header stays on top */
-  margin: 0 auto; /* Center the header horizontally */
-  margin-bottom: 1em; /* Add space below the header */
+  margin-top: 1em; /* Add margin from the top */
 }
 
 h1 {
@@ -30,7 +30,7 @@ h1 {
 nav {
   list-style: none; /* Remove bullet points from list */
   padding: 2em; /* Remove default padding */
-  margin: 0; /* Remove default margin */
+  margin: 0 auto; /* Remove default margin */
   text-align: center; /* Center the navigation elements */
 }
 

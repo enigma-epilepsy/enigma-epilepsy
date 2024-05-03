@@ -1,12 +1,12 @@
 body {
   font-family: Arial, sans-serif; /* Set a default font */
   margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
+  padding: 2em; /* Add margin from left and right */
 }
 
 header {
   background-color: #f0f0f0; /* Light gray background for header */
-  padding: 1em 2em; /* Add padding for spacing */
+  padding: 1em; /* Add padding for spacing */
   display: flex; /* Arrange elements horizontally */
   justify-content: space-between; /* Align items horizontally */
   align-items: center; /* Align items vertically */
@@ -33,4 +33,23 @@ nav a {
 }
 
 nav a:hover {
-  text-decoration: underline; /* Under
+  text-decoration: underline; /* Underline links on hover */
+}
+
+main {
+  /* No additional styles needed for single-column layout */
+}
+
+section {
+  margin-bottom: 2em; /* Add space between sections */
+}
+
+img {
+  display: block; /* Images behave like block elements for better layout */
+  margin-bottom: 1em; /* Add space below images */
+  max-width: 100%; /* Images scale to fit content area */
+}
+
+footer {
+  text-align: center; /* Center footer content */
+}

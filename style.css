@@ -10,7 +10,7 @@ header {
   padding: 1em; /* Add padding for spacing */
   display: flex; /* Arrange elements horizontally */
   justify-content: space-between; /* Align items horizontally */
-  align-items: center; /* Align items vertically */
+  align-items: left; /* Align items vertically */
 }
 
 h1 {

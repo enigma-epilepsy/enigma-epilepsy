@@ -29,7 +29,7 @@ h1 {
 
 nav {
   list-style: none; /* Remove bullet points from list */
-  padding: 0; /* Remove default padding */
+  padding: 2em; /* Remove default padding */
   margin: 0; /* Remove default margin */
   text-align: center; /* Center the navigation elements */
 }

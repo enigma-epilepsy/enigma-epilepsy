@@ -17,6 +17,7 @@ header {
   left: 0; /* Position header at the left of the page */
   width: 60%; /* Set header width to 80% of viewport (optional) */
   z-index: 10; /* Set stacking order to ensure header stays on top */
+  margin: 0 auto; /* Center the header horizontally */
   margin-bottom: 1em; /* Add space below the header */
 }
 
@@ -39,7 +40,8 @@ nav li {
 
 nav a {
   text-decoration: none; /* Remove underline from links */
-  color: black; /* Text color for links */
+  font-weight: bold; /* Make navigation links bold */
+  color: white; /* Set text color to white */
 }
 
 nav a:hover {

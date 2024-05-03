@@ -1,11 +1,12 @@
-mbody {
-  font-family: Arial, sans-serif; /* Set a default font */
+body {
+  font-family: Verdana, sans-serif; /* Set a default font */
   margin: 0; /* Remove default margin */
   padding: 2em; /* Add margin from left and right */
+  background-color: #6c88c4; /* Light purple background for body */
 }
 
 header {
-  background-color: #f0f0f0; /* Light gray background for header */
+  background-color: #oo65a2;
   padding: 2em; /* Add padding for spacing */
   display: flex; /* Arrange elements horizontally */
   justify-content: space-between; /* Align items horizontally */

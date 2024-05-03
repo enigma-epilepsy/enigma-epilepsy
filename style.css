@@ -1,0 +1,36 @@
+body {
+  font-family: Arial, sans-serif; /* Set a default font */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+header {
+  background-color: #f0f0f0; /* Light gray background for header */
+  padding: 1em 2em; /* Add padding for spacing */
+  display: flex; /* Arrange elements horizontally */
+  justify-content: space-between; /* Align items horizontally */
+  align-items: center; /* Align items vertically */
+}
+
+h1 {
+  margin: 0; /* Remove default margin for heading */
+}
+
+nav {
+  list-style: none; /* Remove bullet points from list */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+
+nav li {
+  display: inline-block; /* Display list items inline */
+  margin-right: 1em; /* Add margin between list items */
+}
+
+nav a {
+  text-decoration: none; /* Remove underline from links */
+  color: black; /* Text color for links */
+}
+
+nav a:hover {
+  text-decoration: underline; /* Under

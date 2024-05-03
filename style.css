@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif; /* Set a default font */
   margin: 0; /* Remove default margin */
   padding: 2em; /* Add margin from left and right */
+  text-align: center; /* Center the body content */
 }
 
 header {
@@ -37,7 +38,8 @@ nav a:hover {
 }
 
 main {
-  /* No additional styles needed for single-column layout */
+  max-width: 800px; /* Set a maximum width for content area */
+  margin: 0 auto; /* Center the content area horizontally */
 }
 
 section {
@@ -45,11 +47,4 @@ section {
 }
 
 img {
-  display: block; /* Images behave like block elements for better layout */
-  margin-bottom: 1em; /* Add space below images */
-  max-width: 100%; /* Images scale to fit content area */
-}
-
-footer {
-  text-align: center; /* Center footer content */
-}
+  display: block; /* Images behave like block elements for

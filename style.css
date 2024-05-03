@@ -1,4 +1,4 @@
-body {
+mbody {
   font-family: Arial, sans-serif; /* Set a default font */
   margin: 0; /* Remove default margin */
   padding: 2em; /* Add margin from left and right */
@@ -18,7 +18,7 @@ h1 {
 
 nav {
   list-style: none; /* Remove bullet points from list */
-  padding: 0; /* Remove default padding */
+  padding: 2em; /* Remove default padding */
   margin: 0; /* Remove default margin */
 }
 

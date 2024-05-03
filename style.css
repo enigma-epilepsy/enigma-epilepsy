@@ -8,7 +8,7 @@ body {
 
 header {
   background-color: #6c88c4;
-  padding: 2em; /* Add padding for spacing */
+  padding: 1em 2em; /* Add padding for spacing */
   display: flex; /* Arrange elements horizontally */
   justify-content: space-between; /* Align items horizontally */
   align-items: center; /* Align items vertically */
@@ -19,12 +19,19 @@ header {
   width: 60%; /* Set header width to 60% of viewport */
   z-index: 10; /* Set stacking order to ensure header stays on top */
   margin-top: 1em; /* Add margin from the top */
+  margin-bottom: 1em; /* Add margin from the bottom */
 }
 
 h1 {
   padding: 2em; /* Remove default padding */
   margin: 0; /* Remove default margin for heading */
   margin-bottom: 1em; /* Add space below the header */
+}
+
+h2 {
+  padding: 2em; /* Remove default padding */
+  margin: 0; /* Remove default margin for heading */
+  margin-top: 1em; /* Add space below the header */
 }
 
 nav {

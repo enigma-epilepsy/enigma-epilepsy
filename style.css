@@ -9,7 +9,7 @@ body {
 
 header {
   background-color: #6c88c4;
-  padding: 4em 2em; /* Add padding for spacing */
+  padding: 2em 2em; /* Add padding for spacing */
   height: 40px; /* Define the height of the header */
   display: flex; /* Arrange elements horizontally */
   justify-content: space-between; /* Align items horizontally */
@@ -25,14 +25,14 @@ header {
 }
 
 h1 {
-  padding: 6em; /* Remove default padding */
+  padding: 1em; /* Remove default padding */
   margin: 0; /* Remove default margin for heading */
   margin-bottom: 1em; /* Add space below the header */
   scroll-margin-top: 40px; /* Adjust margin to accommodate the fixed header */
 }
 
 h2 {
-  padding: 6em; /* Remove default padding */
+  padding: 1em; /* Remove default padding */
   margin: 0; /* Remove default margin for heading */
   margin-top: 1em; /* Add space below the header */
   scroll-margin-top: 40px; /* Adjust margin to accommodate the fixed header */
@@ -72,4 +72,12 @@ section {
 }
 
 img {
-  display: block; /* Images behave like block elements for
+  display: block; /* Images behave like block elements for better layout */
+  margin-bottom: 1em; /* Add space below images */
+  max-width: 100%; /* Images scale to fit content area */
+  scroll-margin-top: 40px; /* Adjust margin to accommodate the fixed header */
+}
+
+footer {
+  text-align: center; /* Center footer content (optional) */
+}

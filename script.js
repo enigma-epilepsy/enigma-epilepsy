@@ -24,3 +24,10 @@ const handleMediaChange = (event) => {
 
 mediaQuery.addEventListener('change', handleMediaChange);
 handleMediaChange(mediaQuery); // Call on initial load
+
+navList.classList.add('navigation-menu'); // Show menu on small screens initially
+
+menuButton.addEventListener('click', () => {
+  navList.classList.toggle('navigation-menu');
+  menuButton.style.display = navList.classList.contains('navigation-menu') ? 'none' : 'block';
+});

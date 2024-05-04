@@ -4,6 +4,7 @@ body {
   padding: 6em; /* Add margin from left and right */
   background-color: #f0f0f0; /* Light purple background for body */
   margin-top: 4em; /* Add space above the body content */
+  scroll-margin-top: 6em; /* Adjust margin to accommodate the fixed header */
 }
 
 header {
@@ -26,12 +27,15 @@ h1 {
   padding: 6em; /* Remove default padding */
   margin: 0; /* Remove default margin for heading */
   margin-bottom: 1em; /* Add space below the header */
+  scroll-margin-top: 6em; /* Adjust margin to accommodate the fixed header */
 }
 
 h2 {
   padding: 6em; /* Remove default padding */
   margin: 0; /* Remove default margin for heading */
   margin-top: 1em; /* Add space below the header */
+  scroll-margin-top: 6em; /* Adjust margin to accommodate the fixed header */
+
 }
 
 nav {
@@ -63,6 +67,7 @@ main {
 
 section {
   margin-bottom: 2em; /* Add space between sections */
+ scroll-margin-top: 6em; /* Adjust margin to accommodate the fixed header */
 }
 
 img {

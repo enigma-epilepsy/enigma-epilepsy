@@ -28,14 +28,14 @@ h1 {
   padding: 1em; /* Remove default padding */
   margin: 0; /* Remove default margin for heading */
   margin-bottom: 1em; /* Add space below the header */
-  scroll-margin-top: 40px; /* Adjust margin to accommodate the fixed header */
+  scroll-margin-top: 60px; /* Adjust margin to accommodate the fixed header */
 }
 
 h2 {
   padding: 1em; /* Remove default padding */
   margin: 0; /* Remove default margin for heading */
   margin-top: 1em; /* Add space below the header */
-  scroll-margin-top: 40px; /* Adjust margin to accommodate the fixed header */
+  scroll-margin-top: 60px; /* Adjust margin to accommodate the fixed header */
 
 }
 
@@ -68,7 +68,7 @@ main {
 
 section {
   margin-bottom: 2em; /* Add space between sections */
-  scroll-margin-top: 40px; /* Adjust margin to accommodate the fixed header */
+  scroll-margin-top: 60px; /* Adjust margin to accommodate the fixed header */
 }
 
 img {

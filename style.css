@@ -75,11 +75,31 @@ section {
   scroll-margin-top: 60px; /* Adjust margin to accommodate the fixed header */
 }
 
+
+
+.menu-button {
+  display: none; /* Initially hide the menu button */
+  position: absolute; /* Position the button for better control */
+  top: 50%; /* Center the button vertically */
+  transform: translateY(-50%); /* Adjust for centering */
+  right: 1em; /* Position the button on the right side */
+  padding: 0.5em 1em; /* Add some padding to the button */
+  background-color: #6c88c4; /* Match header background color */
+  color: white; /* Set text color to white */
+  border: none; /* Remove default border */
+  cursor: pointer; /* Indicate clickable behavior */
+}
+
 @media only screen and (max-width: 768px) {
   body {
     padding: 2em;
   }
+  .menu-button {
+    display: block;
+  }
+  
   header {
+    height: auto; /* Adjust header height to content */
     width: 80%; 
     padding: 1em; 
   }

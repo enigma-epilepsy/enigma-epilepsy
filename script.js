@@ -8,8 +8,10 @@ navList.parentNode.insertBefore(menuButton, navList); // Add button before navig
 
 // Toggle menu on button click
 menuButton.addEventListener('click', () => {
-  navList.classList.toggle('navigation-menu'); // Toggle visibility of navigation menu using class
+  console.log('Menu button clicked!');
+  navList.classList.toggle('navigation-menu');
 });
+
 
 // Responsive behavior using media queries (optional)
 const mediaQuery = window.matchMedia('(max-width: 768px)'); // Adjust breakpoint as needed

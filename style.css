@@ -71,6 +71,10 @@ section {
   scroll-margin-top: 60px; /* Adjust margin to accommodate the fixed header */
 }
 
+.menu-button {
+  display: none; /* hide the menu button */
+}
+
 @media only screen and (max-width: 768px) {
   body {
     padding: 2em;

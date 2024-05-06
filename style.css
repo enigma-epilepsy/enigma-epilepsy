@@ -18,7 +18,7 @@ header {
   top: 0; /* Position header at the top of the page */
   left: 50%; /* Position header at the center horizontally */
   transform: translateX(-50%); /* Adjust for centering */
-  width: 60%; /* Set header width to 60% of viewport */
+  width: 50%; /* Set header width to 60% of viewport */
   z-index: 10; /* Set stacking order to ensure header stays on top */
   margin-top: 1em; /* Add margin from the top */
   margin-bottom: 1em; /* Add margin from the bottom */
@@ -56,6 +56,7 @@ nav li {
 
 nav a {
   text-decoration: none; /* Remove underline from links */
+  font-family: Tahoma, Arial, sans-serif; /* fall back font */
   font-weight: bold; /* Make navigation links bold */
   color: white; /* Set text color to white */
 }

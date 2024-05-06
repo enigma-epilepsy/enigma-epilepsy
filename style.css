@@ -46,10 +46,6 @@ nav {
   text-align: center; /* Center the navigation elements */
 }
 
-.navigation-menu {
-  display: none; /* Initially hide the navigation menu */
-}
-
 nav li {
   display: inline-block; /* Display list items inline */
   margin-right: 1em; /* Add margin between list items */
@@ -81,6 +77,10 @@ section {
   }
   .menu-button {
     display: block;
+  }
+
+  .navigation-menu {
+  display: none; /* Initially hide the navigation menu */
   }
   
   header {

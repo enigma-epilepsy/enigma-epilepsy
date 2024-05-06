@@ -19,10 +19,9 @@ header {
   top: 0; /* Position header at the top of the page */
   left: 50%; /* Position header at the center horizontally */
   transform: translateX(-50%); /* Adjust for centering */
-  width: 60%; /* Adjust the percentage as needed */
   margin: 0 auto; /* Center the header horizontally */
   z-index: 10; /* Set stacking order to ensure header stays on top */
-  margin-top: 1em; /* Add margin from the top */
+  margin-top: 0em; /* Add margin from the top */
   margin-bottom: 1em; /* Add margin from the bottom */
 }
 

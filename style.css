@@ -58,10 +58,10 @@ nav li {
 
 nav a {
   text-decoration: none; /* Remove underline from links */
-  font-family: "Tahoma", Arial, sans-serif; /* fall back font */
-  font-weight: bold; /* Make navigation links bold */
-  font-size: 1.2rem
-  color: white; /* Set text color to white */
+  font-family: "Tahoma", Arial, sans-serif; /* Tahoma first, then fallbacks */
+  font-size: 1.2rem; /* Increase font size */
+  color: white;
+  font-weight: bold;
 }
 
 nav a:hover {

@@ -17,12 +17,13 @@ header {
   align-items: center; /* Align items vertically */
   position: fixed; /* Freeze header in position */
   top: 0; /* Position header at the top of the page */
-  left: 25%; /* Position header at the center horizontally */
-  transform: translateX(-75%); /* Adjust for centering */
+  left: 50%; /* Position header at the center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
   margin: 0 auto; /* Center the header horizontally */
   z-index: 10; /* Set stacking order to ensure header stays on top */
   margin-top: 0em; /* Add margin from the top */
   margin-bottom: 1em; /* Add margin from the bottom */
+  flex: 0.75;
 }
 
 h1 {

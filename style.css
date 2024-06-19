@@ -23,7 +23,7 @@ header {
   z-index: 10; /* Set stacking order to ensure header stays on top */
   margin-top: 0em; /* Add margin from the top */
   margin-bottom: 1em; /* Add margin from the bottom */
-  flex: 0.75;
+  flex: 1;
 }
 
 h1 {

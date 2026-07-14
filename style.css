@@ -1,120 +1,173 @@
+:root {
+  --bg: #f4f7fb;
+  --surface: #ffffff;
+  --primary: #5b7bd5;
+  --primary-dark: #35508f;
+  --text: #24324a;
+  --muted: #5f6f86;
+  --border: #dfe7f3;
+  --shadow: 0 12px 35px rgba(20, 38, 71, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Verdana", sans-serif; /* Set a default font */
-  margin: 0; /* Remove default margin */
-  padding: 6em; /* Add margin from left and right */
-  background-color: #f0f0f0; /* Light purple background for body */
-  margin-top: 4em; /* Add space above the body content */
-  scroll-margin-top: 60px; /* Adjust margin to accommodate the fixed header */
-  overflow-y: scroll; /* Enable smooth scrolling */
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 5.5rem 1.25rem 3rem;
+  background: linear-gradient(135deg, #f8fbff 0%, #f1f5ff 100%);
+  color: var(--text);
+  line-height: 1.6;
+  scroll-margin-top: 90px;
+  overflow-y: scroll;
 }
 
 header {
-  background-color: #6c88c4;
-  padding: 2em 2em; /* Add padding for spacing */
-  height: 40px; /* Define the height of the header */
-  display: flex; /* Arrange elements horizontally */
-  justify-content: space-between; /* Align items horizontally */
-  align-items: center; /* Align items vertically */
-  position: fixed; /* Freeze header in position */
-  top: 0; /* Position header at the top of the page */
-  left: 50%; /* Position header at the center horizontally */
-  transform: translateX(-50%); /* Adjust for centering */
-  margin: 0 auto; /* Center the header horizontally */
-  z-index: 10; /* Set stacking order to ensure header stays on top */
-  margin-top: 0em; /* Add margin from the top */
-  margin-bottom: 1em; /* Add margin from the bottom */
-  flex: 1;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  padding: 1rem 1.25rem;
+  min-height: 68px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(980px, calc(100% - 1.5rem));
+  border-radius: 0 0 1rem 1rem;
+  z-index: 10;
+}
+
+h1,
+h2 {
+  margin: 0 0 0.75rem;
+  line-height: 1.2;
+  color: var(--primary-dark);
+  scroll-margin-top: 100px;
 }
 
 h1 {
-  padding: 1em; /* Remove default padding */
-  margin: 0; /* Remove default margin for heading */
-  margin-bottom: 1em; /* Add space below the header */
-  scroll-margin-top: 60px; /* Adjust margin to accommodate the fixed header */
+  padding: 0;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
 }
 
 h2 {
-  padding: 1em; /* Remove default padding */
-  margin: 0; /* Remove default margin for heading */
-  margin-top: 1em; /* Add space below the header */
-  scroll-margin-top: 60px; /* Adjust margin to accommodate the fixed header */
+  padding: 0;
+  margin-top: 1.25rem;
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+}
+
+p {
+  margin: 0 0 1rem;
+  color: var(--muted);
 }
 
 .menu-button {
-  display: none; /* hide the menu button */
+  display: none;
 }
 
 nav {
-  list-style: none; /* Remove bullet points from list */
-  padding: 2em; /* Remove default padding */
-  margin: 0 auto; /* Remove default margin */
-  text-align: center; /* Center the navigation elements */
+  margin: 0;
+  padding: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  padding: 0;
+  margin: 0;
 }
 
 nav li {
-  display: inline-block; /* Display list items inline */
-  margin-right: 1em; /* Add margin between list items */
+  display: inline-block;
 }
 
 nav a {
-  text-decoration: none; /* Remove underline from links */
-  font-size: 1.2rem; /* Increase font size */
-  color: white;
-  font-weight: bold;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  transition: all 0.2s ease;
 }
 
-nav a:hover {
-  text-decoration: underline; /* Underline links on hover */
+nav a:hover,
+nav a:focus-visible {
+  background: var(--primary);
+  color: #ffffff;
+  text-decoration: none;
 }
 
 main {
-  max-width: 800px; /* Set a maximum width for content area */
-  margin: 0 auto; /* Center the content area horizontally */
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 section {
-  margin-bottom: 2em; /* Add space between sections */
-  scroll-margin-top: 60px; /* Adjust margin to accommodate the fixed header */
+  margin-bottom: 1.25rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  scroll-margin-top: 100px;
+}
+
+img {
+  display: block;
+  margin: 1rem 0;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 24px rgba(20, 38, 71, 0.08);
+  scroll-margin-top: 40px;
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  padding: 1rem 0 0;
 }
 
 @media only screen and (max-width: 768px) {
   body {
-    padding: 2em;
+    padding: 5rem 1rem 2rem;
   }
+
+  header {
+    width: calc(100% - 1rem);
+    padding: 1rem;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
   .menu-button {
     display: block;
   }
 
-  .navigation-menu {
-  display: none; /* Initially hide the navigation menu */
+  nav ul {
+    flex-direction: column;
+    gap: 0.35rem;
   }
-  
-  header {
-    height: auto; /* Adjust header height to content */
-    width: 80%; 
-    padding: 1em; 
+
+  nav li {
+    display: block;
   }
-  h1, h2 {
+
+  h1,
+  h2 {
     font-size: 1.2em;
   }
-  nav {
-    text-align: left;
-  }
-  nav li {
-    display: block; /* Stack navigation items vertically on smaller screens */
-  }
-}
-
-/* Other styles... */
-
-img {
-  display: block;
-  margin-bottom: 1em;
-  max-width: 100%;
-  scroll-margin-top: 40px;
-  height: auto; 
-}
-
-footer {
-  text-align: center; /* Center footer content (optional) */
 }

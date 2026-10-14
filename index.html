@@ -166,6 +166,12 @@
           <td>29-June-26</td>
           <td><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1093/braincomms/fcag253">10.1093/braincomms/fcag253</a></td>
         </tr>
+        <tr>
+          <td>Limited sex-specific structural alterations across common epilepsies: A worldwide ENIGMA study</td>
+          <td>Wen H</td>
+          <td>14-Oct-26</td>
+          <td><a target="_blank" rel="noopener noreferrer" href="https://doi.org/10.1002/epi.70515">10.1002/epi.70515</a></td>
+        </tr>
       </tbody>
     </table>
     </section>
@@ -555,15 +561,17 @@
 
     <h3>Preparing MRI data</h3>
     <p>MRI data is to be provided as DICOMs (e.g. one subject/session per folder) or NIFTI with JSON sidecar. If you are converting from 
-      DICOMs to NIFTI/JSONs we recommend using either <a href="https://unfmontreal.github.io/Dcm2Bids/3.2.0/">dcm2bids</a> or 
-      <a href="https://bidscoin.readthedocs.io/en/latest/">BIDScoin</a>. We are HIPAA, GDPR, and GCP compliant: please anonymize to 
-      remove identifying header information (dates, names, addresses etc.). MRI data does not need to be defaced as we are not publicly sharing raw MRI data.</p>
-    <p>If you have field maps, during the anonymization process please ensure these header fields are recorded in the JSON:</p>
+      DICOMs to NIFTI/JSONs we recommend using either  <a href="https://unfmontreal.github.io/Dcm2Bids/3.2.0/">dcm2bids</a> or 
+      <a href="https://bidscoin.readthedocs.io/en/latest/">BIDScoin</a>. We are HIPAA, GDPR, and GCP compliant: please anonymize to remove 
+      identifying header information (dates, names, addresses etc.). MRI data does not need to be defaced as we are not publicly sharing raw MRI data.</p>
+    <p>If using fieldmaps, ensure your fieldmaps have:</p>
     <ul>
-        <li><strong>IntendedFor:</strong> E.g. "IntendedFor": ["bids::sub-01/ses-01/dwi/sub-01_ses-01_dir-AP_dwi.nii.gz"]</li>
-        <li><strong>B0FieldIdentifier & B0FieldSource:</strong> E.g. "B0FieldIdentifier": "fmap_run01", "B0FieldSource": "fmap_run01"</li>
-        <li><strong>TotalReadoutTime:</strong> If using EPI files for fieldmap correction, ensure they have "TotalReadoutTime", e.g.: "TotalReadoutTime": 0.00475.</li>
-        <li><strong>PhaseEncodingDirection:</strong> For EPI, ASL, fMRI-BOLD, and DWI images, ensure they have the "PhaseEncodingDirection" field, e.g.: "PhaseEncodingDirection": "j-"</li>
+        <li><strong>IntendedFor:</strong> e.g. "IntendedFor": ["bids::sub-01/ses-01/dwi/sub-01_ses-01_dir-AP_dwi.nii.gz"]</li>
+        <li><strong>B0FieldIdentifier & B0FieldSource:</strong> e.g. "B0FieldIdentifier": "fmap_run01", "B0FieldSource": "fmap_run01"</li>
+        <li><strong>TotalReadoutTime:</strong> e.g.: "TotalReadoutTime": 0.00475. If your image has "EstimatedTotalReadoutTime", copy this as "TotalReadoutTime".</li>
+        <li><strong>PhaseEncodingDirection:</strong> e.g.: "PhaseEncodingDirection": "j-". If your image has “PhaseEncodingAxis”, you can get “PhaseEncodingDirection” by 
+          running dcm2niix on a single un-anonymized subject and copying the value of “PhaseEncodingDirection”. You will need to make sure all other subjects 
+          follow the same phase-encoding-axis.</li>
     </ul>
 
     <h3>Preparing demographic and clinical covariates</h3>
@@ -571,7 +579,7 @@
       available which lists the core covariates that must be included for participation in secondary projects. The covariate file can be submitted as a CSV or Excel file.</p>
 
     <h3>Data transfer method</h3>
-    <p>Data (MRI and demographic/clinical covariate information) are transferred via box.com. When you are ready, send an email 
+    <p>Data (MRI data, scanner parameters, demographic/clinical covariate information) are transferred via box.com. When you are ready, send an email 
       to <a href="mailto:sehatton@health.ucsd.edu">sehatton@health.ucsd.edu</a> and you will be provided with a link to drag-and-drop the data in.</p>
     </section>
 
